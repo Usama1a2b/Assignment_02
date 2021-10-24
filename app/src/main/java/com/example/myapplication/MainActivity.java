@@ -1,7 +1,6 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -78,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
                         alertDialog.show();
                     }
                 }
+
 
                 else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
