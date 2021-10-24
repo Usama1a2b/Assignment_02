@@ -6,10 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private Button button;
+    private EditText txtname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +21,11 @@ public class MainActivity extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
-                button.setText("hello ho gya");
+                EditText txtname = findViewById(R.id.editTextTextPersonName);
+                String name =  txtname.getText().toString();
+
+                button.setText(name);
+
             }
         });
 
