@@ -46,16 +46,25 @@ public class MainActivity extends AppCompatActivity {
                         alertDialog.show();
                     }
 
+                    else if (name_int== 98 || name_int== 100 || name_int== 102 || name_int== 104 || name_int== 107 || name_int== 108 || name_int== 116){
+                        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                        builder.setMessage( "\"" + character + "\"" + " is a "+ "\"" + "sky letter" + "\"");
+                        builder.setTitle("Result");
+                        builder.setCancelable(false);
+                        builder.setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which)
+                            {
+                                dialog.cancel();
+                            }
+                        });
+                        AlertDialog alertDialog = builder.create();
+                        alertDialog.show();
+                    }
 
 
-
-
-
-
-
-
-                    button.setText(name);
                 }
+
                 else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                     builder.setMessage("Please enter correct alphabet\nOnly small alphabets are accepted");
@@ -73,6 +82,5 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
     };
 }
