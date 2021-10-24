@@ -23,8 +23,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 EditText txtname = findViewById(R.id.editTextTextPersonName);
                 String name =  txtname.getText().toString();
+                char character = name.charAt(0);
+                int name_int =(int) character;
 
-                button.setText(name);
+                    if (name_int>96 && name_int<123){
+                        button.setText(name);
+
+                }
 
             }
         });
