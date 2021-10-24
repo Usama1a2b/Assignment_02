@@ -2,6 +2,9 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -26,11 +29,29 @@ public class MainActivity extends AppCompatActivity {
                 char character = name.charAt(0);
                 int name_int =(int) character;
 
-                    if (name_int>96 && name_int<123){
-                        button.setText(name);
+                if (name_int>96 && name_int<123){
 
+                    if (name_int>96 && name_int<123)
+
+
+
+                    button.setText(name);
                 }
-
+                else {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                    builder.setMessage("Please enter correct alphabet\nOnly small alphabets are accepted");
+                    builder.setTitle("Error");
+                    builder.setCancelable(false);
+                    builder.setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which)
+                        {
+                            dialog.cancel();
+                        }
+                    });
+                    AlertDialog alertDialog = builder.create();
+                    alertDialog.show();
+                }
             }
         });
 
